@@ -8,13 +8,6 @@ export default function GlobalError(props: {
   useEffect(() => {
     // Log error to console in all environments for debugging
     console.error('Global error:', props.error);
-
-    // Sentry automatically handles environment detection via sentry.client.config.ts
-    if (typeof window !== 'undefined') {
-      import('@sentry/nextjs').then((Sentry) => {
-        Sentry.captureException(props.error);
-      });
-    }
   }, [props.error]);
 
   return (

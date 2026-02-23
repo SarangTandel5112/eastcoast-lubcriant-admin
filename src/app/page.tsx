@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import { HomeOverview } from '@/modules/admin';
 
-export default function RootPage() {
-  redirect('/dashboard');
+export default function HomePage() {
+  return <HomeOverview />;
 }

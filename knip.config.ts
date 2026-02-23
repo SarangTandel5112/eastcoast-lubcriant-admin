@@ -1,7 +1,6 @@
 import type { KnipConfig } from 'knip';
 
 const config: KnipConfig = {
-  // Files to exclude from Knip analysis
   ignore: [
     '.storybook/**/*',
     'src/modules/common/helpers/common.helper.ts',
@@ -16,22 +15,21 @@ const config: KnipConfig = {
     'src/modules/counter/types/counter.types.ts',
     'src/app/(marketing)/counter/actions.ts',
   ],
-  // Dependencies to ignore during analysis
   ignoreDependencies: [
     '@commitlint/types',
     'conventional-changelog-conventionalcommits',
     'vite',
     '@faker-js/faker',
     'npm-run-all',
+    'lefthook',
+    'vitest-browser-react',
   ],
-  // Binaries to ignore during analysis
   ignoreBinaries: [
-    'production', // False positive raised with dotenv-cli
+    'production',
     'dotenv',
     'checkly',
     'lhci',
   ],
-  // Ignore exports that are only used in the same file
   ignoreExportsUsedInFile: true,
   compilers: {
     css: (text: string) => [...text.matchAll(/(?<=@)import[^;]+/g)].join('\n'),

@@ -1,6 +1,6 @@
 export * from './badge';
-export * from './button.styles';
 export * from './button';
+export * from './button.styles';
 export * from './card';
 export * from './cn';
 export * from './input';

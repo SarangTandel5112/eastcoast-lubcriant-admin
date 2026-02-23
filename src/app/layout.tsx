@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { AdminShell } from '@/modules/admin';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ADMIN_NAVIGATION, AdminLayout } from '@/modules/admin';
 import '@/styles/global.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
 
 export const metadata: Metadata = {
   title: 'Admin Panel',
@@ -16,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans bg-neutral-950 text-neutral-100">
-        <AdminShell>{props.children}</AdminShell>
+    <html lang="en">
+      <body className="bg-neutral-950 font-sans text-neutral-100">
+        <AdminLayout navigation={ADMIN_NAVIGATION}>{props.children}</AdminLayout>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
