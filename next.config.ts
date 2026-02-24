@@ -3,9 +3,35 @@ import withBundleAnalyzer from '@next/bundle-analyzer';
 import { withSentryConfig } from '@sentry/nextjs';
 import './src/libs/Env';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+const connectSrcEntries = [
+  '\'self\'',
+  '*.posthog.com',
+  '*.sentry.io',
+  '*.vercel-insights.com',
+  'vitals.vercel-insights.com',
+  ...(isDevelopment
+    ? [
+        'http://localhost:8969',
+        'ws://localhost:8969',
+        'http://127.0.0.1:8969',
+        'ws://127.0.0.1:8969',
+      ]
+    : []),
+];
+
 // Define the base Next.js configuration
 const baseConfig: NextConfig = {
   compress: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+    ],
+  },
   experimental: {
     fetchCacheKeyPrefix: 'v1',
     optimizePackageImports: ['@/modules/common', '@/modules/admin'],
@@ -39,7 +65,7 @@ const baseConfig: NextConfig = {
               'style-src \'self\' \'unsafe-inline\'',
               'img-src \'self\' blob: data: https:',
               'font-src \'self\' data:',
-              'connect-src \'self\' *.posthog.com *.sentry.io *.vercel-insights.com vitals.vercel-insights.com',
+              `connect-src ${connectSrcEntries.join(' ')}`,
               'frame-ancestors \'self\'',
               'base-uri \'self\'',
               'form-action \'self\'',

@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { ProductsListingPage } from '@/components/admin/products';
 
 export default function ProductsPage() {
-  return <AdminModulePage pageId="products" />;
+  return <ProductsListingPage />;
 }
