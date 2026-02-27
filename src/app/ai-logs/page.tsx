@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { AiLogsModulePage } from '@/modules/ai-logs';
 
 export default function AiLogsPage() {
-  return <AdminModulePage pageId="ai-logs" />;
+  return <AiLogsModulePage />;
 }

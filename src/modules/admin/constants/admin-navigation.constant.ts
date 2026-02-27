@@ -16,19 +16,19 @@ export const ADMIN_NAVIGATION: AdminNavigationItem[] = [
   {
     id: 'products',
     label: 'Products',
-    path: '/products',
+    path: '/admin/products',
     description: 'Manage product catalog and lifecycle',
   },
   {
     id: 'categories',
     label: 'Categories',
-    path: '/categories',
+    path: '/admin/categories',
     description: 'Organize product categories',
   },
   {
     id: 'brands',
     label: 'Brands',
-    path: '/brands',
+    path: '/admin/brands',
     description: 'Maintain brand details',
   },
   {

@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { redirect } from 'next/navigation';
 
-export default function CategoriesPage() {
-  return <AdminModulePage pageId="categories" />;
+export default function CategoriesRedirectPage() {
+  redirect('/admin/categories');
 }

@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { SettingsModulePage } from '@/modules/settings';
 
 export default function SettingsPage() {
-  return <AdminModulePage pageId="settings" />;
+  return <SettingsModulePage />;
 }

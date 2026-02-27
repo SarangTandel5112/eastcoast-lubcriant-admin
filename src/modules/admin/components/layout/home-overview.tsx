@@ -45,7 +45,7 @@ export const HomeOverview = () => {
             <Link href="/orders" className={cn(buttonVariants({ variant: 'outline' }))}>
               Create order
             </Link>
-            <Link href="/products" className={cn(buttonVariants({ variant: 'outline' }))}>
+            <Link href="/admin/products" className={cn(buttonVariants({ variant: 'outline' }))}>
               Add product
             </Link>
           </div>

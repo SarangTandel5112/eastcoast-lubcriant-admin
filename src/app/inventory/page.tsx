@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { InventoryModulePage } from '@/modules/inventory';
 
 export default function InventoryPage() {
-  return <AdminModulePage pageId="inventory" />;
+  return <InventoryModulePage />;
 }

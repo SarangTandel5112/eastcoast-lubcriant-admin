@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { PromotionsModulePage } from '@/modules/promotions';
 
 export default function PromotionsPage() {
-  return <AdminModulePage pageId="promotions" />;
+  return <PromotionsModulePage />;
 }

@@ -1,5 +1,5 @@
-import { AdminModulePage } from '@/modules/admin';
+import { DashboardModulePage } from '@/modules/dashboard';
 
 export default function DashboardPage() {
-  return <AdminModulePage pageId="dashboard" />;
+  return <DashboardModulePage />;
 }

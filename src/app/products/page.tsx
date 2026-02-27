@@ -1,5 +1,5 @@
-import { ProductsListingPage } from '@/modules/products';
+import { redirect } from 'next/navigation';
 
-export default function ProductsPage() {
-  return <ProductsListingPage />;
+export default function ProductsRedirectPage() {
+  redirect('/admin/products');
 }

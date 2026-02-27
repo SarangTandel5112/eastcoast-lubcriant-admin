@@ -1,0 +1,13 @@
+'use client';
+
+import { Button } from '@/modules/common';
+
+export default function CategoriesError(props: { error: Error & { digest?: string }; reset: () => void }) {
+  return (
+    <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-6">
+      <h2 className="text-lg font-semibold text-red-200">Unable to load categories</h2>
+      <p className="mt-2 text-sm text-red-200/80">{props.error.message}</p>
+      <Button className="mt-4" variant="outline" onClick={props.reset}>Try again</Button>
+    </div>
+  );
+}

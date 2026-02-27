@@ -5,9 +5,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = Env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
   const routes = [
     '/dashboard',
-    '/products',
-    '/categories',
-    '/brands',
+    '/admin/products',
+    '/admin/products/create',
+    '/admin/categories',
+    '/admin/brands',
     '/inventory',
     '/orders',
     '/dealers',
